@@ -8,9 +8,3 @@ public class HelloWorld {
     }
     
 }
-// // java HelloWorld reza estifai miaooo
-// output: 
-// Number of arguments: 3
-// Argument 0: reza
-// Argument 1: estifai
-// Argument 2: miaooo
