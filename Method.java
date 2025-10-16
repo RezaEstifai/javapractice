@@ -4,13 +4,13 @@ public class Method {
     public static void sayHello() {
         System.out.println("Hello from the sayHello method!");
     }
-    public static void chartyp() {
+    public static void charnew() {
         char f = 'n';
         String s = "this is a string for testin the environemt ";
         System.out.println(s);
     }
     public static void main (String[] args) {
         sayHello();
-        chartyp();
+        charnew();
     }
 }
