@@ -20,5 +20,7 @@ public class App {
         char f = 'c';
         String s = "this is a string";
 
+        //all parameters are passed by value!!!
+
     }
 }
