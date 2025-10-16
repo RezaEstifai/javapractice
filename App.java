@@ -17,9 +17,8 @@ public class App {
         }
 
         // data types
-        char f = 'c';
-        String s = "this is a string";
-
+        char f='c';
+        String c = "this is my java program";
         //all parameters are passed by value!!!
 
     }
