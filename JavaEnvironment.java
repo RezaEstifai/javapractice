@@ -1,5 +1,5 @@
 public class JavaEnvironment {
-    public static void basic (String [] args) {
+    public static void basic (String [] args) throws Exception{
         System.out.println("Hello, World!");
 
         // basic properties
@@ -22,8 +22,19 @@ public class JavaEnvironment {
         //data types 
         char f = 'c';
         String c = "this is my java program";
+
         // all parameters are passed by value!!!
+        dumbCharPrinter(f);
+        System.out.println(f);
+        System.out.println("------------------------------");
+        // defining the first class
+        // it's written down | dubCharPrinter
     }
+    public static void dumbCharPrinter( char toPrint) {
+        toPrint = '1';
+        System.out.println(toPrint);
+    }
+
     public static void for_(String [] args) {
         System.out.println("Number of argument : "+ args.length);
         for (int i=0 ; i<args.length; i++ ) {
@@ -40,7 +51,7 @@ public class JavaEnvironment {
     public static void sayHello() {
         System.out.println("Hello from the sayHello method!");
     }
-    public static void main (String [] args) {
+    public static void main (String [] args) throws Exception {
         basic(args);
         for_(args);
         sayHello();
