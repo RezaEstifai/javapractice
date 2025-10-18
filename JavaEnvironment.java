@@ -56,8 +56,10 @@ public class JavaEnvironment {
         for_(args);
         sayHello();
         charnew();
+        // using Car class from Car.java
         Car myCar = new Car();
         myCar.turnOn();
         System.out.println("car turned on: " + myCar.turnedOn);
+        System.out.println(myCar.getColor());
     }
 }
