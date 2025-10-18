@@ -1,3 +1,4 @@
+// since this file is just a class it doesn't need a main method 
 public class Car {
     // attributes
     private String color;
@@ -12,5 +13,5 @@ public class Car {
     public String getColor() {
         return color;
     }
-    
+
 }

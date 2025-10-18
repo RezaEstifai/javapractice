@@ -56,5 +56,8 @@ public class JavaEnvironment {
         for_(args);
         sayHello();
         charnew();
+        Car myCar = new Car();
+        myCar.turnOn();
+        System.out.println("car turned on: " + myCar.turnedOn);
     }
 }
