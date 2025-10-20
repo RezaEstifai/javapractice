@@ -2,7 +2,7 @@ public class JavaEnvironment {
     public static void basic (String [] args) throws Exception{
         System.out.println("Hello, World!");
 
-        // basic properties
+        /* basic properties */
         int i =0;
         if (i==0) {
             System.out.println("i is equal to zero");
@@ -11,24 +11,24 @@ public class JavaEnvironment {
             System.out.println("i is positive");
         }
 
-        // booleans
+        /*  booleans */
         boolean cond = true;
 
-        while (cond) { // since it's a boolean therefore there is no need for wirte cond==true 
+        while (cond) { /* since it's a boolean therefore there is no need for wirte cond==true */
             System.out.println("this is an infinite loop if you don't break it!");
             break;
         }
 
-        //data types 
+        /* data types */
         char f = 'c';
         String c = "this is my java program";
 
-        // all parameters are passed by value!!!
+        /* all parameters are passed by value!!!*/
         dumbCharPrinter(f);
         System.out.println(f);
         System.out.println("------------------------------");
-        // defining the first class
-        // it's written down | dubCharPrinter
+        /* defining the first class */ 
+        /* it's written down | dubCharPrinter */ 
     }
     public static void dumbCharPrinter( char toPrint) {
         toPrint = '1';
@@ -51,15 +51,22 @@ public class JavaEnvironment {
     public static void sayHello() {
         System.out.println("Hello from the sayHello method!");
     }
+
+
     public static void main (String [] args) throws Exception {
-        basic(args);
-        for_(args);
-        sayHello();
-        charnew();
-        // using Car class from Car.java
-        Car myCar = new Car();
-        myCar.turnOn();
-        System.out.println("car turned on: " + myCar.turnedOn);
-        System.out.println(myCar.getColor());
+        //basic(args);
+        //for_(args);
+        //sayHello();
+        //charnew();
+
+        /* using Car class from Car.java */ 
+        //Car myCar = new Car();
+        //myCar.turnOn();
+        //System.out.println("car turned on: " + myCar.turnedOn);
+        //System.out.println(myCar.getColor());
+        
+        /* using constructors from file constructors_Human*/
+        constructors_Human human = new constructors_Human("Reza", 23, 92.4);
+        
     }
 }
