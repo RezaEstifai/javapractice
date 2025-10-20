@@ -2,7 +2,7 @@
 public class Car {
     // attributes
     private String color;
-    private int numSeats;
+    int numSeats;
     private String plate;
     boolean turnedOn;
 
@@ -13,5 +13,10 @@ public class Car {
     public String getColor() {
         return color;
     }
-    
+    public void setNseats(int numSeats) {
+        this.numSeats = numSeats;
+    }
+    public int showNumseats() {
+        return numSeats;
+    }
 }
