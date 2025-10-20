@@ -1,8 +1,10 @@
+
 ☕ javaPractice
 
 Welcome to javaPractice — a collection of all the Java code I write while learning and improving my programming skills!
 
 This repository is my learning playground, where I experiment with Java concepts, try new things, and track my progress as a developer.
+
 
 🎯 What’s Inside?
 
@@ -18,16 +20,19 @@ You’ll find different kinds of Java programs, such as:
 
 ✅ Anything new I learn and want to practice!
 
+
 🌱 Why I Created This Repo
 
 I believe that the best way to learn is by writing code every day.
 This repository shows my growth, dedication, and passion for Java.
 Every file here is a step forward in my programming journey.
 
+
 🔥 My Passion for Learning Java
 
 Java is powerful, versatile, and used everywhere — and I want to master it!
 I’m always curious, always improving, and excited to build real applications in the future.
+
 
 🚀 Future Plans
 
@@ -38,6 +43,7 @@ Improve code structure and best practices
 Explore Java libraries & frameworks
 
 Share my progress with others!
+
 
 🤝 Feedback or Suggestions?
 
