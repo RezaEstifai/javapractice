@@ -9,7 +9,7 @@ public class constructors_Human {
         this.weight = weight;
     }
 
-    /* Methods */
+    /* Void Methods */
     void eat() { /*calling this method is different w.r.t. constructors_Human */
         System.out.println(this.name + " is eating now ");
     }
