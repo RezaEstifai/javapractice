@@ -93,6 +93,8 @@ public class JavaEnvironment {
          */
         c1.setNseats(4);
         Car c2 = new Car();
+        Car c3 = new Car("12x3415");
+        System.out.println("plate number : " + c3.showPlate());
         System.out.println("numSeats : " + c1.showNumseats());
         System.out.println("num : " + c2.showNumseats());
 
