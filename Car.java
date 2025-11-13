@@ -5,7 +5,7 @@ public class Car {
     int numSeats;
     private String plate;
     boolean turnedOn;
-
+    public Car() {}
     public void turnOn() {
         turnedOn = true;
     }
@@ -18,5 +18,5 @@ public class Car {
     }
     public int showNumseats() {
         return numSeats;
-    }
+    } 
 }

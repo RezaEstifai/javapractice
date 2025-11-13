@@ -60,10 +60,10 @@ public class JavaEnvironment {
         //charnew();
 
         /* using Car class from Car.java */ 
-        Car myCar = new Car();
-        myCar.turnOn();
-        // System.out.println("car turned on: " + myCar.turnedOn);
-        // System.out.println(myCar.getColor());
+        Car c1 = new Car();
+        c1.turnOn();
+        // System.out.println("car turned on: " + c1.turnedOn);
+        // System.out.println(c1.getColor());
 
         /* if setNseats have return 
          * 1st Method -------------------------------
@@ -72,14 +72,14 @@ public class JavaEnvironment {
                     return numSeats;
                 }
          *  
-         *  int f = myCar.setNseats(4);
+         *  int f = c1.setNseats(4);
             System.out.println("num seats : " + f);
          */
 
         /* 
          * 2st Method -------------------------------
          * 
-         *System.out.println("number of available seats are : " + myCar.setNseats(4));
+         *System.out.println("number of available seats are : " + c1.setNseats(4));
 
          */
 
@@ -91,8 +91,12 @@ public class JavaEnvironment {
             public int showNumseats() {
                 return numSeats;
          */
-        myCar.setNseats(4);
-        System.out.println("numSeats : " + myCar.showNumseats());
+        c1.setNseats(4);
+        Car c2 = new Car();
+        System.out.println("numSeats : " + c1.showNumseats());
+        System.out.println("num : " + c2.showNumseats());
+
+
         //System.out.println("number of available seats are : " + f);
         /* using constructors from file constructors_Human*/
         constructors_Human human = new constructors_Human("Reza", 23, 92.4);
