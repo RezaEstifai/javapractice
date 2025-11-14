@@ -100,6 +100,13 @@ public class JavaEnvironment {
         System.out.println("plate number : " + c3.showPlate());
         System.out.println("numSeats : " + c1.showNumseats());
         System.out.println("num : " + c2.showNumseats());
+        
+        /* Method Chaining 1st */
+        Car c4 = new Car();
+        c4.wash().dry();
+        /* Method Chaining 2rd */
+        Car c5 = c4.wash();
+        c5.dry();
 
 
         //System.out.println("number of available seats are : " + f);

@@ -36,4 +36,12 @@ public class Car {
     public String showPlate() {
         return plate;
     }
+
+    public Car wash() {
+        System.out.println("the car is being washed");
+        return this;
+    }
+    public void dry() {
+        System.out.println("the is being dried!");
+    }
 }
