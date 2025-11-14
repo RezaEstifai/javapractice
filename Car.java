@@ -2,8 +2,8 @@
 public class Car {
     // attributes
     private String color;
-    int numSeats;
-    private String plate;
+    private int numSeats;
+    String plate;
     boolean turnedOn;
     public Car() {}
     
