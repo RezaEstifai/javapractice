@@ -1,3 +1,5 @@
+import transports.Car;
+import transports.Mechanic;
 public class JavaEnvironment {
     public static void basic (String [] args) throws Exception{
         System.out.println("Hello, World!");
@@ -146,6 +148,10 @@ public class JavaEnvironment {
         
         /* Packages and Visibility */
         bestCar.setNseats(-4);
-        bestCar.turnedOn = false;
+        //bestCar.turnedOn = false;      // ERROR
+
+        Mechanic m = new Mechanic("Karen");
+        bestCar.setMyMechanic(m);
+        System.out.println(bestCar.repair());
     }
 }

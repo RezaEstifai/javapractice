@@ -1,3 +1,4 @@
+package transports;
 // since this file is just a class it doesn't need a main method 
 public class Car {
     // attributes
@@ -6,7 +7,7 @@ public class Car {
     private String plate;
     boolean turnedOn;
     private int fuelLevel; // max fuelLevel = 10
-
+    private Mechanic myMechanic; // we can put objects of other classes
 
     public Car() {}
     
@@ -29,6 +30,9 @@ public class Car {
     }
     public String getColor() {
         return color;
+    }
+    public String getPlate() {
+        return plate;
     }
 
     public int getFuelLevel() {
@@ -79,5 +83,16 @@ public class Car {
         // no need for writing else
         return false;
     }
+
+    public void setMyMechanic(Mechanic m) {
+        this.myMechanic = m;
+    }
+
+    public void setMyMechanic(String mName) {
+        this.myMechanic = new Mechanic(mName);
+    }
+    public String repair() {
+        return myMechanic.repair(this);
+    }  
 
 }
