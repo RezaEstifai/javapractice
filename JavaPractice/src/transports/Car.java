@@ -7,8 +7,8 @@ public class Car {
     private String plate;
     boolean turnedOn;
     private int fuelLevel; // max fuelLevel = 10
-    private Mechanic myMechanic; // we can put objects of other classes
-
+    private Mechanic myMechanic; // it creates an empty box (that is object Mechanic that contains all methdods inside it but empty)
+                                 // and if we call it with its methods it's gonna make a ... with those methods and store the date and we can use it in another java file 
     public Car() {}
     
     
