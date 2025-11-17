@@ -5,6 +5,9 @@ public class Car {
     private int numSeats;
     String plate;
     boolean turnedOn;
+    private int fuelLevel; // max fuelLevel = 10
+
+
     public Car() {}
     
     
@@ -27,8 +30,28 @@ public class Car {
     public String getColor() {
         return color;
     }
+
+    public int getFuelLevel() {
+        return this.fuelLevel;
+    }
+
     public void setNseats(int numSeats) {
         this.numSeats = numSeats;
+    }
+
+    // overloading example 
+    public void fillFuelLevel() {
+        if (fuelLevel < 10) {
+            fuelLevel = 10;
+        }
+    }
+    public void fillFuelLevel(int recharge) {
+        if (fuelLevel + recharge <= 10) {
+            fuelLevel += recharge;
+        }
+        else {
+            fuelLevel = 10;
+        }
     }
     public int showNumseats() {
         return numSeats;
@@ -44,4 +67,14 @@ public class Car {
     public void dry() {
         System.out.println("the is being dried!");
     }
+
+    /* Comparison Method */
+    public boolean isEqual (Car c) {
+        if (this.plate == c.plate) {
+            return true;
+        }
+        // no need for writing else
+        return false;
+    }
+
 }

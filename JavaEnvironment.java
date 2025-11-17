@@ -110,6 +110,7 @@ public class JavaEnvironment {
 
         /* Comparing Objects */
         Car bestCar = new Car("120x1341");
+        Car anotherCarMaybe = new Car("120x1341");
         Car maybeBestCar = bestCar;
         if (bestCar == maybeBestCar) {
             System.out.println("same");
@@ -125,6 +126,25 @@ public class JavaEnvironment {
         /* Method Chaining Counter */
         Counter cnt = new Counter();
         cnt.reset().print().increment(10).print().decrement(7).print();
+
+        /* Comparison Method class Car.java */
+        if (bestCar.isEqual(anotherCarMaybe)) {
+            System.out.println("same");
+        }
+        else {
+            System.out.println("not same");
+        }
+        // now you will see that the output is same, beacuse the elements inside each one of them is same 
+
+        // overloading example 1
+        bestCar.fillFuelLevel(2);
+        System.out.println("the current fuel level is : " + bestCar.getFuelLevel());
+        bestCar.fillFuelLevel(4);
+        System.out.println("the current fuel level is : " + bestCar.getFuelLevel());
+        bestCar.fillFuelLevel();
+        System.out.println("the current fuel level is : " + bestCar.getFuelLevel());
         
+
+    
     }
 }
