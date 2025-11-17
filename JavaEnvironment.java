@@ -108,10 +108,23 @@ public class JavaEnvironment {
         Car c5 = c4.wash();
         c5.dry();
 
-
+        /* Comparing Objects */
+        Car bestCar = new Car("120x1341");
+        Car maybeBestCar = bestCar;
+        if (bestCar == maybeBestCar) {
+            System.out.println("same");
+        }
+        else {
+            System.out.println("not same");
+        }
+        System.out.println(maybeBestCar.getClass());
         //System.out.println("number of available seats are : " + f);
         /* using constructors from file constructors_Human*/
         constructors_Human human = new constructors_Human("Reza", 23, 92.4);
-            
+        
+        /* Method Chaining Counter */
+        Counter cnt = new Counter();
+        cnt.reset().print().increment(10).print().decrement(7).print();
+        
     }
 }
