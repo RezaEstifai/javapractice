@@ -3,7 +3,7 @@ public class Car {
     // attributes
     private String color;
     private int numSeats;
-    String plate;
+    private String plate;
     boolean turnedOn;
     private int fuelLevel; // max fuelLevel = 10
 
@@ -36,6 +36,9 @@ public class Car {
     }
 
     public void setNseats(int numSeats) {
+        if (numSeats < 0) {
+            System.out.println("NOT VALID");
+        }
         this.numSeats = numSeats;
     }
 

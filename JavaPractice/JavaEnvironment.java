@@ -95,7 +95,7 @@ public class JavaEnvironment {
         Car c2 = new Car();
         Car c3 = new Car("12x3415");
         // Method Invocation 
-        System.out.println(c3.plate);
+        //System.out.println(c3.plate); // cannot be run because plate is private 
         //end of Method Invoaction 
         System.out.println("plate number : " + c3.showPlate());
         System.out.println("numSeats : " + c1.showNumseats());
@@ -144,7 +144,8 @@ public class JavaEnvironment {
         bestCar.fillFuelLevel();
         System.out.println("the current fuel level is : " + bestCar.getFuelLevel());
         
-
-    
+        /* Packages and Visibility */
+        bestCar.setNseats(-4);
+        bestCar.turnedOn = false;
     }
 }
