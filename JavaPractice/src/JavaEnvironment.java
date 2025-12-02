@@ -153,5 +153,43 @@ public class JavaEnvironment {
         Mechanic m = new Mechanic("Karen");
         bestCar.setMyMechanic(m);
         System.out.println(bestCar.repair());
+
+        /* Wrappers */
+        Integer number = new Integer(10); // it's creating an object box that holds number 10 and since it's an object you can use method on it 
+        number = Integer.valueOf(10); //it searches if there is a box in memory with name number (if not it will create one) then it assign the 10 to it 
+        int primNumber = 21;
+        number = Integer.valueOf(primNumber);
+        number = primNumber; 
+        primNumber = number; // even though primNumber is int and number is an object, java extracts the int value from number box and it gives to primNumber (it's called auto-boxing)
+
+        //conversion among types are also possible 
+        String word = "121.1";
+        Float decimal = Float.valueOf(word);
+        IO.println(decimal + " is sorted as " + decimal.getClass()); // IO is same as System.out
+        // word = "Schibdi";
+        // decimal = Float.valueOf(word);
+
+        /* array creation */
+        // int [] a;        //creation
+        // a = new int[10]; // declration
+        int [] primes = {2,3,5,7,11,13};
+        int size =5;
+        int [] numbers = new int[size]; // creation and declration combined 
+        IO.println(numbers);
+
+         
+        for (int n:numbers) { // only for printing 
+            IO.println(n);
+        }
+        
+        for (int n = 0; n<numbers.length; n++) { // changing the variables 
+            numbers[n] = 1;
+            IO.println(numbers[n]);
+        }
+        // another way for initializing 
+        Double [] decimalMarks = {19.3, 21.5, 18.7};
+        IO.println(decimalMarks.length);
+ 
+
     }
 }
