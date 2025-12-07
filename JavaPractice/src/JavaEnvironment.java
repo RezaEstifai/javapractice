@@ -1,5 +1,7 @@
 import transports.Car;
 import transports.Mechanic;
+import transports.Person;
+
 public class JavaEnvironment {
     public static void basic (String [] args) throws Exception{
         System.out.println("Hello, World!");
@@ -190,6 +192,17 @@ public class JavaEnvironment {
         Double [] decimalMarks = {19.3, 21.5, 18.7};
         IO.println(decimalMarks.length);
  
+        // importing Person in this file since it's in another folder 
+        /* Working with String */
+        String[] array_s = new String[6]; // 6 null boxes in the memory (array of 6 strings)
+        String single_s = new String();   // single String 
 
+        /* Implement an array of arrays */
+        Person[][] table = new Person[2][3];
+        table[0][2] = new Person("Marry");
+        IO.println(table[0][2].getName());
+
+        Person [] p = {new Person("John"), new Person("Reza")};
+        IO.println(p[0].getName());
     }
 }
