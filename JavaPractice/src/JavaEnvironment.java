@@ -181,16 +181,16 @@ public class JavaEnvironment {
 
          
         for (int n:numbers) { // only for printing 
-            IO.println(n);
+            //IO.println(n);
         }
         
         for (int n = 0; n<numbers.length; n++) { // changing the variables 
             numbers[n] = 1;
-            IO.println(numbers[n]);
+            //IO.println(numbers[n]);
         }
         // another way for initializing 
         Double [] decimalMarks = {19.3, 21.5, 18.7};
-        IO.println(decimalMarks.length);
+        //IO.println(decimalMarks.length);
  
         // importing Person in this file since it's in another folder 
         /* Working with String */
@@ -204,5 +204,42 @@ public class JavaEnvironment {
 
         Person [] p = {new Person("John"), new Person("Reza")};
         IO.println(p[0].getName());
+
+        int [][] binaryMatrix = new int[2][5];
+        binaryMatrix[0][0]=1;
+        binaryMatrix[1][4]=1;
+
+        //IO.println(binaryMatrix);
+        // since they are pointer exchanging rows is trivial
+        for(int [] row:binaryMatrix) {
+            //IO.println(row);
+            for(int n :row) {
+                IO.print(n);
+            }
+            IO.println();
+        }
+        int [] temp = binaryMatrix[1]; // putting second row in the temp variable 
+        binaryMatrix[1] = binaryMatrix[0]; //assigning first row to the second row 
+        binaryMatrix[0] = temp;         // assingin temp (which is second row) to first row
+
+        IO.println();
+        /* printing a matrix */
+        for(int [] row:binaryMatrix) {
+            //IO.println(row);
+            for(int n :row) {
+                IO.print(n);
+            }
+            IO.println();
+        }
+
+        // about looping on array of objects...
+        Car[] cars = {new Car("0000"), new Car("1111") , new Car("2222")};
+        for (Car c22 : cars) {
+            c22 = new Car();
+        }
+
+        for (Car c12: cars) {
+            IO.println(c12.getPlate());
+        }
     }
 }
