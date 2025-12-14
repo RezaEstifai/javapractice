@@ -171,7 +171,7 @@ public class JavaEnvironment {
         // word = "Schibdi";
         // decimal = Float.valueOf(word);
 
-        /* array creation */
+        /* Array creation */
         // int [] a;        //creation
         // a = new int[10]; // declration
         int [] primes = {2,3,5,7,11,13};
