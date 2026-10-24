@@ -1,0 +1,104 @@
+Why Case D showed an error
+
+In plain English, Java was trying to create a Student using a name and an
+enrolled value:
+
+    new Student("Reza", false)
+
+But the version of the Student class that Java was running did not have a
+matching setup for those two values. This can happen when the project has
+another Student class or is still using old compiled files.
+
+I renamed the class used by this example to ClassroomStudent. That gives it a
+distinct name, so Java can identify the right class for Case D.
+
+After the rename, the program compiled and ran successfully. If the same error
+appears in the IDE, clean and rebuild the project to refresh its compiled files.
+
+
+import re
+from telethon import TelegramClient, events
+
+# ==========================================
+# 1. YOUR CREDENTIALS & GROUPS
+# ==========================================
+API_ID = 37611747
+API_HASH = 'f7dd94b397c5b9e0b036cfe1b615a72e'
+
+# PUT YOUR GROUP USERNAMES HERE:
+# Open the group in Telegram -> click the top bar -> look at the link (e.g., t.me/affitti_torino)
+# Only put the part after "t.me/" inside the quotes below:
+TARGET_GROUPS = [
+    'https://t.me/c/CaseStudentiTorino/1']
+
+# ==========================================
+# 2. KEYWORD FILTERS (English & Italian)
+# ==========================================
+
+# Must match at least ONE of these (Single room indicators)
+SINGLE_ROOM_KEYWORDS = [
+    # English
+    r'\bsingle room\b', r'\bprivate room\b', r'\b1 bedroom\b', r'\bone bedroom\b',
+    # Italian
+    r'\bstanza singola\b', r'\bcamera singola\b', r'\bsingola\b'
+]
+
+# Exclude if it matches ANY of these (People looking for rooms, or shared rooms)
+EXCLUDE_KEYWORDS = [
+    # Looking for a room (English & Italian)
+    r'\blooking for\b', r'\bsearching for\b', r'\bi need a\b', r'\bin search of\b',
+    r'\bcerco\b', r'\bcerchiamo\b', r'\bsto cercando\b',
+    # Shared / Double rooms
+    r'\bshared room\b', r'\bposto letto\b', r'\bdoppia uso doppia\b'
+]
+
+single_pattern = re.compile('|'.join(SINGLE_ROOM_KEYWORDS), re.IGNORECASE)
+exclude_pattern = re.compile('|'.join(EXCLUDE_KEYWORDS), re.IGNORECASE)
+
+# ==========================================
+# 3. BOT LOGIC
+# ==========================================
+client = TelegramClient('room_finder_session', API_ID, API_HASH)
+
+@client.on(events.NewMessage(chats=TARGET_GROUPS))
+async def monitor_rooms(event):
+    message_text = event.raw_text
+    if not message_text:
+        return
+
+    has_single_room = bool(single_pattern.search(message_text))
+    is_excluded = bool(exclude_pattern.search(message_text))
+
+    if has_single_room and not is_excluded:
+        chat = await event.get_chat()
+        sender = await event.get_sender()
+        
+        chat_title = getattr(chat, 'title', 'Unknown Group')
+        sender_username = f"@{sender.username}" if getattr(sender, 'username', None) else "No username (open link to message them)"
+        
+        if getattr(chat, 'username', None):
+            msg_link = f"https://t.me/{chat.username}/{event.id}"
+        else:
+            msg_link = "Private Group (Check the group directly)"
+
+        notification = (
+            f"🏠 **NEW SINGLE ROOM FOUND!**\n\n"
+            f"📍 **Group:** {chat_title}\n"
+            f"👤 **Posted by:** {sender_username}\n"
+            f"🔗 **Link:** {msg_link}\n\n"
+            f"📝 **Message:**\n{message_text}"
+        )
+
+        # Sends the alert to your "Saved Messages" in Telegram
+        await client.send_message('me', notification, link_preview=False)
+        print(f"[!] Match found in '{chat_title}' and sent to Saved Messages!")
+
+async def main():
+    print("✅ Bot is connected and running!")
+    print(f"👀 Watching groups: {TARGET_GROUPS}")
+    print("Waiting for new single room offers... (Press Ctrl+C to stop)")
+    await client.run_until_disconnected()
+
+if __name__ == '__main__':
+    with client:
+        client.loop.run_until_complete(main())
