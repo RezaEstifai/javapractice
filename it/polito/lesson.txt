@@ -1,0 +1,31 @@
+==================================================
+JAVA ACCESS MODIFIERS QUICK REFERENCE NOTE
+==================================================
+
+* File type to save: Plain text (.txt) or Markdown (.md) in your Java folder.
+
+1. private int a:
+   - Can only be accessed inside the curly braces {} of that specific class.
+   - Other files in the same folder cannot access it.
+   - Files in other folders cannot access it (even with imports).
+
+2. int a (no keyword / package-private / default):
+   - Can be accessed by any file in the same folder (package).
+   - Files in other folders cannot access it, even if they import the class.
+
+3. public int a:
+   - Can be accessed directly by all files across all folders, as long as the class itself is public.
+
+4. protected int a (bonus rule):
+   - Can be accessed within the same package and by child classes (subclasses) in other packages.
+ 
+
+
+5. a == b	            Do both references point to the same object?        --> better for primitives values
+   a.equals(b)	         Do both Integer objects represent the same value?   --> better for wrappers
+
+
+
+
+If the input is "5 10 20 30", then hasNextInt() is true and the condition is false.
+If the input is "abc 10 20" or there is no number at all, then hasNextInt() is false and the code enters the block.
