@@ -112,3 +112,33 @@ public class StaticAll {
         System.out.println("Students after: " + StudentManager.totalStudentsCreated); // Works! Prints 2
     }
 }
+// * Look at something() inside ClassA. Is it private?
+
+// - Yes: Stop! You cannot call it directly from outside ClassA. Look for a public getter/helper method instead.
+
+// * Are you in a different folder (package)?
+
+//  - Yes: Did you write import folder.ClassA; at the top? And is something() marked public (or protected if you used extends)? If it has no keyword, you cannot call it.
+
+// * Does something() have the word static in its declaration?
+
+// - Yes (static): Do NOT create an object. Just write:ClassA.something();
+
+// - No (No static): You MUST create an object first, then call it on the object:ClassA obj = new ClassA();obj.something(); 
+
+
+// * Does the method use `this.variableName` or any non-static field of the class?**
+
+// - Yes: It **must be non-static
+
+// - No: Go to step 2.
+
+// * Is it a model class representing an entity in your system (e.g., `User`, `Booking`, `Order`, `Flight`)
+
+// - Almost all methods in model classes (getters, setters, state transitions) are **non-static** because they describe what that entity has or does.
+
+// * Is it a helper, a mathematical formula, a parser, or a global counter?
+
+// - Examples: `Math.max(a, b)`, `Integer.parseInt(str)`, `FileHelper.readFile(path)`, `DatabaseConnection.getConnection()`.
+
+// - These are tools that don't need persistent personal memory $\rightarrow$ **make them `static`.
