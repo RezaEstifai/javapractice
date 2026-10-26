@@ -1,3 +1,5 @@
+package JavaPractice.src;
+
 public class Method {
 
     // This is a method named sayHello

@@ -1,3 +1,5 @@
+package src;
+
 /* =============================================================================
  * TOPIC: Getters, Setters, and Object Association (image_d3c1e1.png)
  * FILE NAME: StudentExample.java

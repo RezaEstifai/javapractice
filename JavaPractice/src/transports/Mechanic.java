@@ -1,4 +1,4 @@
-package transports;
+package JavaPractice.src.transports;
 
 public class Mechanic {
     private String name;

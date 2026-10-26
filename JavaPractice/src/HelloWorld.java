@@ -1,3 +1,5 @@
+package JavaPractice.src;
+
 // hello world in java
 public class HelloWorld {
     public static void main (String [] args) {

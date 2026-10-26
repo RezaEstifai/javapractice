@@ -1,6 +1,8 @@
-import transports.Car;
-import transports.Mechanic;
-import transports.Person;
+package JavaPractice.src;
+
+import JavaPractice.src.transports.Car;
+import JavaPractice.src.transports.Mechanic;
+import JavaPractice.src.transports.Person;
 
 public class JavaEnvironment {
     public static void basic (String [] args) throws Exception{

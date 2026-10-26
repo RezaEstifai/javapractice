@@ -1,4 +1,4 @@
-package transports;
+package JavaPractice.src.transports;
 // since this file is just a class it doesn't need a main method 
 public class Car {
     // attributes

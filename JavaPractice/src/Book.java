@@ -1,3 +1,5 @@
+package JavaPractice.src;
+
 class Book {
     int pages;
     void readPage(int n ) {

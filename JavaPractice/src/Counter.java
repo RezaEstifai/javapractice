@@ -1,3 +1,5 @@
+package JavaPractice.src;
+
 public class Counter {
     private int value;
     public Counter reset() {
