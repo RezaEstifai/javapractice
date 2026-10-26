@@ -4,7 +4,7 @@ class StudentManager {
     // 1. INSTANCE VARIABLES (Belong to a specific created object)
     public String name;           // Visible everywhere
     private int secretId;         // Locked strictly inside StudentManager
-    protected double gpa;         // Visible in the same package + any subclasses
+    protected double gpa;         // Visible to any classes in the same folder like main + any subclasses
     int age;                      // Default (package-private): Visible only in this package
 
     // 2. STATIC VARIABLES (Belong to the Class itself, shared by ALL objects)
