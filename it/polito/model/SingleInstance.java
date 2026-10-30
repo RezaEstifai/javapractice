@@ -5,7 +5,7 @@ import java.util.Map;
 public class SingleInstance {
 
     // 1. Private static variable of the same type to store the single instance
-    private static SingleInstance instance; // [globally directed.png]
+    private static SingleInstance instance; //* */ [Lazy Initialization.png]
     // 4. Public static method providing global on-demand access
     public static SingleInstance getInstance() {
         if (instance == null) {
@@ -37,10 +37,10 @@ public class SingleInstance {
 
     // static lets this nested class exist without a SingleInstance object,
     // so its static root field can create the singleton directly.
-    public static class DirectoryEager { // [directly eager.png]
+    public static class DirectoryEager { 
 
         // Initialized when the class is loaded.
-        public static final DirectoryEager root = new DirectoryEager();
+        public static final DirectoryEager root = new DirectoryEager();  // * [Eager Initialization.png]
 
         private DirectoryEager() {
             // Prevent callers from creating additional instances.
