@@ -17,7 +17,7 @@ public class LocalInnerClosure {
     static class Student {
 
 
-        void display(LocalInnerClosure uni) {
+        void display(LocalInnerClosure uni) {    //* uni is just a name that refers to LocalInnerClosure class so with saying uni.name it can access to the non-static name (since Student class is static and cannot directly access non-static members of the outer class) */
             System.out.println(uni.name);
         }
     }
